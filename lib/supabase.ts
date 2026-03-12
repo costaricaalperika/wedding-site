@@ -1,4 +1,4 @@
-import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import { createClient } from "@supabase/supabase-js";
 
 export interface Guest {
   id: string;
@@ -8,20 +8,9 @@ export interface Guest {
   created_at: string;
 }
 
-interface Database {
-  public: {
-    Tables: {
-      guests: {
-        Row: Guest;
-        Insert: Omit<Guest, "id" | "created_at">;
-      };
-    };
-  };
-}
+let _supabase: ReturnType<typeof createClient> | null = null;
 
-let _supabase: SupabaseClient<Database> | null = null;
-
-export function getSupabase(): SupabaseClient<Database> {
+export function getSupabase() {
   if (_supabase) return _supabase;
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -33,6 +22,6 @@ export function getSupabase(): SupabaseClient<Database> {
     );
   }
 
-  _supabase = createClient<Database>(url, key);
+  _supabase = createClient(url, key);
   return _supabase;
 }
