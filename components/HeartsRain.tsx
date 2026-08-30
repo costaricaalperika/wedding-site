@@ -45,7 +45,7 @@ export default function HeartsRain({ active }: Props) {
   if (!active || reduceMotion) return null;
 
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 z-40 overflow-hidden">
+    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       {hearts.map((h, i) => (
         <span
           key={i}
