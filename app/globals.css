@@ -1,0 +1,141 @@
+@import "tailwindcss";
+@import "yet-another-react-lightbox/styles.css";
+
+/**
+ * Palet — minimalist-demo.thedigitalyes.com ile uyumlu
+ * (ivory / cream zemin, ink metin, sage vurgu, gold detay; kaynak: demo :root HSL → hex)
+ */
+@theme inline {
+  --color-cream: #f3f0e7;
+  /** Kart / bantlı bölümler (demo --card / --cream) */
+  --color-cream-elevated: #ede9de;
+  /** Sınırlar, input (demo --border tonuna yakın) */
+  --color-cream-dark: #dce0e5;
+  /** Ana metin (demo --ink / --foreground) */
+  --color-warm: #3a5978;
+  /** İkincil metin (demo --muted-foreground) */
+  --color-warm-light: #668099;
+  /** Vurgu, link, çizgi (demo --sage / --accent) */
+  --color-rose: #507395;
+  /** Hover / koyu vurgu (demo --ink-dark) */
+  --color-rose-dark: #2b4764;
+  /** Altın detay (demo --gold / --gold-soft) */
+  --color-gold: #d1a847;
+  --color-gold-light: #ceb67e;
+  /** Hero alt gradient ucu (yumuşak slate-mist) */
+  --color-hero-mist: #e0e6eb;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Lato", system-ui, sans-serif;
+}
+
+/**
+ * İnce kağıt dokusu: çapraz lif + hafif granül (SVG gürültü)
+ */
+:root {
+  --paper-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+  --paper-linen: repeating-linear-gradient(
+      0deg,
+      rgba(58, 89, 120, 0.034) 0px,
+      transparent 1px,
+      transparent 3px,
+      rgba(58, 89, 120, 0.02) 4px,
+      transparent 4px,
+      transparent 8px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(58, 89, 120, 0.026) 0px,
+      transparent 1px,
+      transparent 4px,
+      rgba(58, 89, 120, 0.016) 5px,
+      transparent 5px,
+      transparent 10px
+    ),
+    radial-gradient(ellipse 130% 85% at 50% -20%, rgba(255, 255, 255, 0.35) 0%, transparent 55%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  background-image: var(--paper-linen), var(--paper-grain);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 128px 128px;
+  background-blend-mode: multiply, multiply, soft-light, soft-light;
+  color: var(--color-warm);
+  font-family: var(--font-sans);
+}
+
+/** Beyaz / krem kart ve bölümler — Tailwind ile birlikte kullan */
+@layer utilities {
+  .bg-paper-white {
+    background-color: #ffffff;
+    background-image: var(--paper-linen), var(--paper-grain);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 128px 128px;
+    background-blend-mode: multiply, multiply, soft-light, soft-light;
+  }
+
+  .bg-paper-cream {
+    background-color: var(--color-cream);
+    background-image: var(--paper-linen), var(--paper-grain);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 128px 128px;
+    background-blend-mode: multiply, multiply, soft-light, soft-light;
+  }
+
+  .bg-paper-elevated {
+    background-color: var(--color-cream-elevated);
+    background-image: var(--paper-linen), var(--paper-grain);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 128px 128px;
+    background-blend-mode: multiply, multiply, soft-light, soft-light;
+  }
+
+  /** Navbar / mobil menü — yarı saydam krem + kağıt */
+  .bg-paper-navbar {
+    background-color: rgb(243 240 231 / 0.95);
+    background-image: var(--paper-linen), var(--paper-grain);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 128px 128px;
+    background-blend-mode: multiply, multiply, soft-light, soft-light;
+  }
+
+  .bg-paper-mobile-nav {
+    background-color: rgb(243 240 231 / 0.98);
+    background-image: var(--paper-linen), var(--paper-grain);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 128px 128px;
+    background-blend-mode: multiply, multiply, soft-light, soft-light;
+  }
+
+  /** Yarı saydam beyaz kutu (davetiye CTA) */
+  .bg-paper-white-soft {
+    background-color: rgb(255 255 255 / 0.92);
+    background-image: var(--paper-linen), var(--paper-grain);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 128px 128px;
+    background-blend-mode: multiply, multiply, soft-light, soft-light;
+  }
+
+  /** Galeri zoom ikonu vb. yarı saydam beyaz */
+  .bg-paper-white-misty {
+    background-color: rgb(255 255 255 / 0.82);
+    background-image: var(--paper-linen), var(--paper-grain);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 128px 128px;
+    background-blend-mode: multiply, multiply, soft-light, soft-light;
+  }
+}
+
+::selection {
+  background: var(--color-rose);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-rose);
+  border-radius: 4px;
+}
