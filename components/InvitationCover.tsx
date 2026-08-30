@@ -94,9 +94,6 @@ export default function InvitationCover({ onOpen }: Props) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.7 }}
             >
-              <p className="font-[family-name:var(--font-serif)] text-base leading-relaxed mb-1 text-warm">
-                This invitation is exclusively for you.
-              </p>
               <p className="font-[family-name:var(--font-serif)] text-base leading-relaxed text-warm">
                 Bu davetiye sizin için özeldir.
               </p>
@@ -115,7 +112,7 @@ export default function InvitationCover({ onOpen }: Props) {
               transition={{ delay: 1, duration: 0.6 }}
               className="text-xs tracking-[0.25em] uppercase mb-3 text-warm-light"
             >
-              16-05-2026
+              03-10-2026
             </motion.p>
 
             <motion.div
@@ -137,9 +134,7 @@ export default function InvitationCover({ onOpen }: Props) {
                 }}
               >
                 <p className="max-w-[18rem] text-center text-[11px] font-semibold leading-relaxed tracking-wide text-warm sm:text-sm">
-                  <span className="uppercase tracking-[0.18em]">Tap to open</span>
-                  <span className="mx-1.5 inline-block text-rose/65">·</span>
-                  <span className="font-bold tracking-[0.14em]">
+                  <span className="font-bold tracking-[0.14em] uppercase">
                     AÇMAK İÇİN DOKUNUN
                   </span>
                 </p>

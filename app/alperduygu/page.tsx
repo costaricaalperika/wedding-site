@@ -8,7 +8,6 @@ import { downloadGuestsExcel } from "@/lib/exportGuestsExcel";
 import { formatMainGuestLabel } from "@/lib/mainGuestLabel";
 import { sortGuests, type AdminSortKey, type SortDir } from "@/lib/sortGuests";
 import { useI18n } from "@/components/i18n";
-import AdminLangSwitcher from "@/components/AdminLangSwitcher";
 
 export default function AdminPage() {
   const { locale, t } = useI18n();
@@ -192,7 +191,6 @@ export default function AdminPage() {
             <p className="text-sm text-warm-light mt-1">{a.dashboardSubtitle}</p>
           </div>
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-            <AdminLangSwitcher />
             <button
               type="button"
               onClick={async () => {

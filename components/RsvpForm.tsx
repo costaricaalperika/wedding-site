@@ -31,7 +31,7 @@ export default function RsvpForm({ invitationOpened = false }: Props) {
   const [validationError, setValidationError] = useState<string | null>(null);
   /** resetForm sonrası da katılım başarısını bilmek için */
   const [successWasAttending, setSuccessWasAttending] = useState<boolean | null>(null);
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
 
   function updatePartySize(n: number) {
     const clamped = Math.min(5, Math.max(1, n));
@@ -142,9 +142,7 @@ export default function RsvpForm({ invitationOpened = false }: Props) {
     <section id="rsvp" className="scroll-mt-24 py-28 md:py-36 bg-paper-elevated">
       <div className="max-w-lg mx-auto px-6">
         <ScrollReveal>
-          <p
-            className={`text-sm tracking-[0.3em] text-rose mb-4 text-center ${locale === "en" ? "uppercase" : ""}`}
-          >
+          <p className="text-sm tracking-[0.3em] text-rose mb-4 text-center">
             {t.rsvp.eyebrow}
           </p>
           <h2 className="font-[family-name:var(--font-serif)] text-4xl md:text-5xl text-center mb-4 text-warm">
@@ -356,9 +354,7 @@ export default function RsvpForm({ invitationOpened = false }: Props) {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className={`w-full py-3.5 rounded-xl bg-warm text-white text-sm hover:bg-warm-light transition-colors duration-300 disabled:opacity-50 ${
-                    locale === "en" ? "uppercase tracking-[0.2em]" : "tracking-wide"
-                  }`}
+                  className="w-full py-3.5 rounded-xl bg-warm text-white text-sm hover:bg-warm-light transition-colors duration-300 disabled:opacity-50 tracking-wide"
                 >
                   {status === "loading" ? t.rsvp.sending : t.rsvp.send}
                 </button>

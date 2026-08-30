@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useI18n } from "@/components/i18n";
-import AdminLangSwitcher from "@/components/AdminLangSwitcher";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -45,9 +44,6 @@ export default function LoginForm() {
   return (
     <div className="min-h-screen bg-paper-cream flex items-center justify-center px-6 py-12">
       <div className="w-full max-w-md">
-        <div className="flex justify-end mb-6">
-          <AdminLangSwitcher />
-        </div>
         <div className="text-center mb-10">
           <p className="font-[family-name:var(--font-serif)] text-2xl text-warm mb-2">
             D &amp; A

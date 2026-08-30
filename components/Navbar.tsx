@@ -6,7 +6,7 @@ import { useI18n } from "./i18n";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { locale, setLocale, t } = useI18n();
+  const { t } = useI18n();
 
   const links = [
     { label: t.nav.event, href: "#event", sectionId: "event" },
@@ -44,31 +44,6 @@ export default function Navbar() {
           >
             D &amp; A
           </a>
-          {/* Mobil: dil seçici menü dışında, logonun sağında */}
-          <div className="flex md:hidden items-center shrink-0">
-            <div className="inline-flex rounded-full border border-rose/40 p-0.5">
-              <button
-                type="button"
-                onClick={() => setLocale("tr")}
-                className={`px-2 py-0.5 text-[10px] font-medium rounded-full transition-colors ${
-                  locale === "tr" ? "bg-rose text-white" : "text-warm-light"
-                }`}
-                aria-label={`${t.nav.lang}: TR`}
-              >
-                TR
-              </button>
-              <button
-                type="button"
-                onClick={() => setLocale("en")}
-                className={`px-2 py-0.5 text-[10px] font-medium rounded-full transition-colors ${
-                  locale === "en" ? "bg-rose text-white" : "text-warm-light"
-                }`}
-                aria-label={`${t.nav.lang}: EN`}
-              >
-                EN
-              </button>
-            </div>
-          </div>
         </div>
 
         {/* Desktop links */}
@@ -77,31 +52,11 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm tracking-[0.2em] text-warm-light hover:text-warm transition-colors duration-300 ${locale === "en" ? "uppercase" : ""}`}
+              className="text-sm tracking-[0.2em] text-warm-light hover:text-warm transition-colors duration-300"
             >
               {link.label}
             </a>
           ))}
-          <div className="inline-flex rounded-full border border-rose/40 p-1">
-            <button
-              onClick={() => setLocale("tr")}
-              className={`px-2 py-1 text-xs rounded-full transition-colors ${
-                locale === "tr" ? "bg-rose text-white" : "text-warm-light"
-              }`}
-              aria-label={`${t.nav.lang}: TR`}
-            >
-              TR
-            </button>
-            <button
-              onClick={() => setLocale("en")}
-              className={`px-2 py-1 text-xs rounded-full transition-colors ${
-                locale === "en" ? "bg-rose text-white" : "text-warm-light"
-              }`}
-              aria-label={`${t.nav.lang}: EN`}
-            >
-              EN
-            </button>
-          </div>
         </div>
 
         {/* Mobile toggle */}
@@ -143,7 +98,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleMobileNavClick(e, link.sectionId, link.href)}
-                  className={`text-sm tracking-[0.2em] text-warm-light hover:text-warm transition-colors ${locale === "en" ? "uppercase" : ""}`}
+                  className="text-sm tracking-[0.2em] text-warm-light hover:text-warm transition-colors"
                 >
                   {link.label}
                 </a>

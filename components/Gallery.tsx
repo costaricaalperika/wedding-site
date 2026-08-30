@@ -14,6 +14,8 @@ const images = [
   { src: "/photo4.jpg" },
   { src: "/photo5.jpeg" },
   { src: "/photo6.jpeg" },
+  { src: "/Portrait.jpg" },
+  { src: "/Landscape.jpg" },
 ];
 
 export default function Gallery() {

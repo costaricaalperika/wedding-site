@@ -1,13 +1,13 @@
 /**
- * Kutlama — 16 Mayıs 2026, Londra (BST / UTC+1).
+ * Kutlama — 3 Ekim 2026, İzmir (Türkiye saati / UTC+3).
  * Google Calendar ve .ics için UTC anlık zaman damgaları.
  */
 
-/** Kutlama 19:00–23:00 BST (yaklaşık) */
-const CELEBRATION_START_UTC = "20260516T180000Z";
-const CELEBRATION_END_UTC = "20260516T220000Z";
+/** Kutlama 19:00–23:00 Türkiye saati (yaklaşık) */
+const CELEBRATION_START_UTC = "20261003T160000Z";
+const CELEBRATION_END_UTC = "20261003T200000Z";
 
-const CELEBRATION_LOCATION = "The Old Brewery, Greenwich, London SE10, United Kingdom";
+const CELEBRATION_LOCATION = "Viola Event, İzmir";
 
 function googleCalendarUrl(params: {
   title: string;
@@ -55,7 +55,7 @@ export function buildCelebrationIcsContent(params: {
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",
-    `UID:celebration-alper-duygu-20260516@wedding-site`,
+    `UID:celebration-alper-duygu-20261003@wedding-site`,
     `DTSTAMP:${formatIcsStamp(new Date())}`,
     `DTSTART:${CELEBRATION_START_UTC}`,
     `DTEND:${CELEBRATION_END_UTC}`,

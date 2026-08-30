@@ -7,7 +7,7 @@ export default function RsvpCalendarAdd() {
   const { t } = useI18n();
   const celebration = t.event.items[1];
 
-  const detailsLine = "Duygu & Alper — 16 May 2026";
+  const detailsLine = "Duygu & Alper — 3 Ekim 2026";
 
   const urlCelebration = buildGoogleCelebrationUrl({
     title: `${celebration.title} — Duygu & Alper`,

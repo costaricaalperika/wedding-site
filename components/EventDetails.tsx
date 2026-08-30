@@ -6,8 +6,8 @@ import Lightbox from "yet-another-react-lightbox";
 import ScrollReveal from "./ScrollReveal";
 import { useI18n } from "./i18n";
 
-/** Nikâh / tören bloğu (Tower Hamlets + harita). `true` yapınca tekrar gösterilir. */
-const SHOW_CEREMONY_SECTION = false;
+/** Nikâh / tören bloğu (Fuar Evlendirme Dairesi + harita). `false` yapınca tekrar gizlenir. */
+const SHOW_CEREMONY_SECTION = true;
 
 const ceremonyIcon = (
   <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -21,22 +21,22 @@ const celebrationIcon = (
   </svg>
 );
 
-const eventPhotos = [{ src: "/Old_Brewery_1.jpg" }];
+const eventPhotos = [{ src: "/Viola_Event_Pic.jpg" }];
 
 /** Google Haritalar API yok: normal web URL; tıklanınca yol tarifi açılır. */
-const TOWER_HAMLETS_DIRECTIONS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=51.5109213,-0.0585546";
+const CEREMONY_DIRECTIONS_URL =
+  "https://www.google.com/maps/dir/?api=1&destination=38.4312951,27.1434633";
 
-const OLD_BREWERY_DIRECTIONS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=51.4829039,-0.0082146";
+const CELEBRATION_DIRECTIONS_URL =
+  "https://www.google.com/maps/dir/?api=1&destination=38.3382394,27.2548208";
 
 /** Kutlama — Google Haritalar gömülü harita (koordinatlar yol tarifi ile aynı; ScrollReveal dışında) */
-const OLD_BREWERY_EMBED_SRC =
-  "https://maps.google.com/maps?q=The+Old+Brewery,+Greenwich,+London+SE10&ll=51.4829039,-0.0082146&z=17&output=embed";
+const CELEBRATION_EMBED_SRC =
+  "https://maps.google.com/maps?q=Viola+Event,+Izmir&ll=38.3382394,27.2548208&z=17&output=embed";
 
-/** Nikâh — Google Haritalar yerleştirilmiş harita (orta boy, paylaş → yerleştir) */
-const TOWER_HAMLETS_EMBED_SRC =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.1248952036167!2d-0.06113488753266775!3d51.51092461032798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761d47a617e55d%3A0xe72fee55624612ea!2sTower%20Hamlets%20Register%20Office!5e0!3m2!1str!2str!4v1773957550937!5m2!1str!2str";
+/** Nikâh — Google Haritalar gömülü harita (Fuar Evlendirme Dairesi, Kültür Parkı, Alsancak, Konak/İzmir) */
+const CEREMONY_EMBED_SRC =
+  "https://maps.google.com/maps?q=Fuar+Evlendirme+Dairesi,+Izmir&ll=38.4312951,27.1434633&z=17&output=embed";
 
 export default function EventDetails() {
   const { t } = useI18n();
@@ -74,7 +74,7 @@ export default function EventDetails() {
                   <p className="text-rose-dark font-semibold mb-4 text-lg">{ceremony.time}</p>
                   <p className="text-warm-light leading-relaxed">{ceremony.description}</p>
                   <a
-                    href={TOWER_HAMLETS_DIRECTIONS_URL}
+                    href={CEREMONY_DIRECTIONS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 mt-6 text-sm uppercase tracking-[0.2em] text-rose border border-rose/40 px-5 py-2.5 rounded-full hover:bg-rose/10 transition-colors"
@@ -91,8 +91,8 @@ export default function EventDetails() {
               <div className="flex-1 w-full min-w-0 max-w-[600px] md:max-w-none self-stretch">
                 <div className="relative isolate h-[280px] w-full overflow-hidden rounded-2xl bg-neutral-200 shadow-lg sm:h-[320px] md:h-96">
                   <iframe
-                    src={TOWER_HAMLETS_EMBED_SRC}
-                    title="Tower Hamlets Register Office — harita"
+                    src={CEREMONY_EMBED_SRC}
+                    title="Fuar Evlendirme Dairesi — harita"
                     className="absolute inset-0 h-full w-full border-0"
                     style={{ border: 0 }}
                     allowFullScreen
@@ -122,7 +122,7 @@ export default function EventDetails() {
               <p className="text-rose-dark font-semibold mb-4 text-lg">{celebration.time}</p>
               <p className="text-warm-light leading-relaxed">{celebration.description}</p>
               <a
-                href={OLD_BREWERY_DIRECTIONS_URL}
+                href={CELEBRATION_DIRECTIONS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-6 text-sm uppercase tracking-[0.2em] text-rose border border-rose/40 px-5 py-2.5 rounded-full hover:bg-rose/10 transition-colors"
@@ -141,7 +141,7 @@ export default function EventDetails() {
                 onClick={() => setLightboxIndex(0)}
               >
                 <Image
-                  src="/Old_Brewery_1.jpg"
+                  src="/Viola_Event_Pic.jpg"
                   alt={celebration.title}
                   fill
                   className="object-cover object-[center_75%] hover:scale-105 transition-transform duration-700"
@@ -159,12 +159,12 @@ export default function EventDetails() {
           </div>
         </ScrollReveal>
 
-        {/* Old Brewery — tam genişlik harita (iframe ScrollReveal dışında, tören bloğu ile aynı ölçüler) */}
+        {/* Viola Event — tam genişlik harita (iframe ScrollReveal dışında, tören bloğu ile aynı ölçüler) */}
         <div className="mt-12 md:mt-16 w-full min-w-0">
           <div className="relative isolate h-[280px] w-full overflow-hidden rounded-2xl bg-neutral-200 shadow-lg sm:h-[320px] md:h-96">
             <iframe
-              src={OLD_BREWERY_EMBED_SRC}
-              title="The Old Brewery, Greenwich — Google Maps"
+              src={CELEBRATION_EMBED_SRC}
+              title="Viola Event, İzmir — Google Haritalar"
               className="absolute inset-0 h-full w-full border-0"
               style={{ border: 0 }}
               allowFullScreen

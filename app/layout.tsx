@@ -25,8 +25,8 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Duygu & Alper — Wedding",
-  description: "Join us to celebrate our wedding.",
+  title: "Duygu & Alper — Düğün",
+  description: "Düğünümüzü kutlamak için bize katılın.",
 };
 
 export default function RootLayout({
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="tr" className="scroll-smooth">
       <body
         className={`${playfair.variable} ${lato.variable} ${greatVibes.variable} antialiased`}
       >
