@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import MusicPlayer from "@/components/MusicPlayer";
 import InvitationCover from "@/components/InvitationCover";
 import PassageBreak from "@/components/PassageBreak";
+import HeartsRain from "@/components/HeartsRain";
 
 export default function Home() {
   const [invitationOpened, setInvitationOpened] = useState(false);
@@ -20,6 +21,7 @@ export default function Home() {
   return (
     <>
       <InvitationCover onOpen={handleInvitationOpen} />
+      <HeartsRain active={invitationOpened} />
       <main>
         <Navbar />
         <Hero />

@@ -17,6 +17,18 @@ export default function MusicPlayer({ shouldStart }: Props) {
     audio.loop = true;
   }, []);
 
+  // Davetiye açılır açılmaz müziği otomatik başlat (kullanıcının "aç" dokunuşuna bağlı,
+  // tarayıcı otomatik oynatma kısıtlamasını böyle aşıyoruz).
+  useEffect(() => {
+    if (!shouldStart) return;
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio
+      .play()
+      .then(() => setPlaying(true))
+      .catch(() => setPlaying(false));
+  }, [shouldStart]);
+
   function toggleSound() {
     const audio = audioRef.current;
     if (!audio) return;

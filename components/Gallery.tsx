@@ -8,14 +8,12 @@ import ScrollReveal from "./ScrollReveal";
 import { useI18n } from "./i18n";
 
 const images = [
-  { src: "/photo1.jpg" },
-  { src: "/photo2.jpg" },
+  { src: "/Portrait.jpg" },
+  { src: "/Landscape.jpg" },
   { src: "/photo3.jpg" },
   { src: "/photo4.jpg" },
   { src: "/photo5.jpeg" },
   { src: "/photo6.jpeg" },
-  { src: "/Portrait.jpg" },
-  { src: "/Landscape.jpg" },
 ];
 
 export default function Gallery() {
