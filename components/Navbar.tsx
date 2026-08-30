@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3 sm:gap-4">
           <a
             href="#"
-            className="font-[family-name:var(--font-hero)] text-xl sm:text-2xl tracking-wide text-warm shrink-0"
+            className="font-[family-name:var(--font-serif)] text-xl sm:text-2xl tracking-wide text-warm shrink-0"
           >
             D &amp; A
           </a>

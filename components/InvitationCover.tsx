@@ -77,7 +77,7 @@ export default function InvitationCover({ onOpen }: Props) {
               transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
               className="w-24 h-24 rounded-full border-2 border-rose/50 flex items-center justify-center mx-auto mb-8 bg-cream-dark/60"
             >
-              <span className="font-[family-name:var(--font-hero)] text-xl leading-tight text-rose-dark px-1 text-center">
+              <span className="font-[family-name:var(--font-serif)] text-xl leading-tight text-rose-dark px-1 text-center">
                 D &amp; A
               </span>
             </motion.div>
