@@ -53,7 +53,7 @@ export default function HeartsRain({ active }: Props) {
           style={{
             left: `${h.left}%`,
             fontSize: `${h.size}px`,
-            color: "#d68fa0",
+            color: "#a8404f",
             opacity: h.opacity,
             animationDuration: `${h.duration}s`,
             animationDelay: `${h.delay}s`,

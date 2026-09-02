@@ -3,7 +3,7 @@ import confetti from "canvas-confetti";
 /** Sadece “katılıyorum” RSVP’si başarıyla gönderildiğinde çağırın (istemci). */
 export function fireRsvpConfetti() {
   const end = Date.now() + 2_000;
-  const colors = ["#507395", "#d1a847", "#3a5978", "#f3f0e7", "#ffffff"];
+  const colors = ["#7a2331", "#c9a227", "#5c1a24", "#f4efe8", "#ffffff"];
 
   const frame = () => {
     confetti({

@@ -20,7 +20,7 @@ type Dictionary = {
     /** Kutlama mekânı (Viola Event) için Google Haritalar yol tarifi bağlantısı etiketi */
     celebrationDirectionsLabel: string;
   };
-  gallery: { eyebrow: string; title: string; photoAlt: string };
+  gallery: { title: string; photoAlt: string };
   /** Bölümler arası passage görselleri (erişilebilir alt metin) */
   passage: { imageAlt: string };
   rsvp: {
@@ -163,8 +163,7 @@ const tr: Dictionary = {
     celebrationDirectionsLabel: "Yol tarifi al (Google Haritalar)",
   },
   gallery: {
-    eyebrow: "Anılarımız",
-    title: "Galeri",
+    title: "Anılarımız",
     photoAlt: "Düğün fotoğrafı",
   },
   passage: {

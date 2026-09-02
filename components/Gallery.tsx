@@ -8,12 +8,6 @@ import ScrollReveal from "./ScrollReveal";
 import { useI18n } from "./i18n";
 
 const images = [
-  { src: "/Portrait.jpg" },
-  { src: "/Landscape.jpg" },
-  { src: "/photo3.jpg" },
-  { src: "/photo4.jpg" },
-  { src: "/photo5.jpeg" },
-  { src: "/photo6.jpeg" },
   { src: "/1.jpeg" },
   { src: "/2.jpeg" },
   { src: "/3.jpeg" },
@@ -36,9 +30,6 @@ export default function Gallery() {
     >
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
-          <p className="text-sm uppercase tracking-[0.3em] text-rose mb-4 text-center">
-            {t.gallery.eyebrow}
-          </p>
           <h2 className="font-[family-name:var(--font-serif)] text-4xl md:text-5xl text-center mb-16 text-warm">
             {t.gallery.title}
           </h2>
