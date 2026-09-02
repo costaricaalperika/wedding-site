@@ -42,7 +42,7 @@ export default function Navbar() {
             href="#"
             className="font-[family-name:var(--font-serif)] text-xl sm:text-2xl tracking-wide text-warm shrink-0"
           >
-            D &amp; A
+            D <span className="text-rose" aria-hidden>♥</span> A
           </a>
         </div>
 

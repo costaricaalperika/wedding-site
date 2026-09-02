@@ -7,6 +7,9 @@ import { useI18n } from "./i18n";
 /** Aşağı düşen kalpler — `true` yapınca tekrar açılır (Hero arka plan animasyonu). */
 const ENABLE_FALLING_HEARTS = false;
 
+/** Hero'daki "Katılım Gönder" butonu — `true` yapınca tekrar görünür. */
+const SHOW_HERO_CTA = false;
+
 const HEART_COUNT = 22;
 
 type Heart = {
@@ -174,15 +177,17 @@ export default function Hero() {
           {t.hero.datePlace}
         </motion.p>
 
-        <motion.a
-          href="#rsvp"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 2.2 }}
-          className="inline-block border border-rose/35 px-8 py-3 text-xs uppercase tracking-[0.3em] text-rose hover:bg-rose/10 hover:border-rose transition-all duration-500"
-        >
-          {t.hero.cta}
-        </motion.a>
+        {SHOW_HERO_CTA && (
+          <motion.a
+            href="#rsvp"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 2.2 }}
+            className="inline-block border border-rose/35 px-8 py-3 text-xs uppercase tracking-[0.3em] text-rose hover:bg-rose/10 hover:border-rose transition-all duration-500"
+          >
+            {t.hero.cta}
+          </motion.a>
+        )}
       </motion.div>
 
       <motion.div

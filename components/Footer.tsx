@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="py-16 text-center bg-paper-cream">
       <ScrollReveal>
         <p className="font-[family-name:var(--font-hero)] text-3xl text-warm mb-2">
-          Duygu &amp; Alper
+          Duygu <span aria-hidden>♥</span> Alper
         </p>
         <p className="text-sm text-warm-light tracking-widest">
           {t.footer.datePlace}

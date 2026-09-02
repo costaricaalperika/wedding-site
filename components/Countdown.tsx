@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 import { useI18n } from "./i18n";
 
-// 3 Ekim 2026, 14:30 Türkiye saati (UTC+3) = 11:30 UTC
+// Nikâh — 3 Ekim 2026, 14:30 Türkiye saati (UTC+3) = 11:30 UTC
 const WEDDING_UTC = new Date("2026-10-03T11:30:00Z");
 
 interface TimeLeft {

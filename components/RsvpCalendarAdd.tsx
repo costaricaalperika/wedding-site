@@ -1,29 +1,52 @@
 "use client";
 
-import { buildGoogleCelebrationUrl, buildCelebrationIcsContent } from "@/lib/weddingCalendar";
+import {
+  buildGoogleCeremonyUrl,
+  buildCeremonyIcsContent,
+  buildGoogleCelebrationUrl,
+  buildCelebrationIcsContent,
+} from "@/lib/weddingCalendar";
 import { useI18n } from "./i18n";
 
 export default function RsvpCalendarAdd() {
   const { t } = useI18n();
+  const ceremony = t.event.items[0];
   const celebration = t.event.items[1];
 
   const detailsLine = "Duygu & Alper — 3 Ekim 2026";
+
+  const urlCeremony = buildGoogleCeremonyUrl({
+    title: `${ceremony.title} — Duygu & Alper`,
+    details: detailsLine,
+  });
 
   const urlCelebration = buildGoogleCelebrationUrl({
     title: `${celebration.title} — Duygu & Alper`,
     details: detailsLine,
   });
 
-  function downloadIcs() {
+  function downloadCeremonyIcs() {
+    const ics = buildCeremonyIcsContent({
+      title: `${ceremony.title} — Duygu & Alper`,
+      description: `${detailsLine}\n\n${ceremony.description}`,
+    });
+    downloadIcsFile(ics, `nikah-${t.rsvp.calendarIcsFilename}`);
+  }
+
+  function downloadCelebrationIcs() {
     const ics = buildCelebrationIcsContent({
       title: `${celebration.title} — Duygu & Alper`,
       description: `${detailsLine}\n\n${celebration.description}`,
     });
+    downloadIcsFile(ics, t.rsvp.calendarIcsFilename);
+  }
+
+  function downloadIcsFile(ics: string, filename: string) {
     const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = t.rsvp.calendarIcsFilename;
+    a.download = filename;
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -34,17 +57,33 @@ export default function RsvpCalendarAdd() {
     "inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-rose/40 bg-paper-cream px-4 py-2.5 text-sm text-warm transition-colors hover:bg-rose/10 hover:border-rose/60";
 
   return (
-    <div className="mt-8 pt-8 border-t border-cream-dark/50 text-left">
-      <p className="text-sm font-medium text-warm mb-3 text-center">{t.rsvp.calendarTitle}</p>
-      <div className="flex flex-col sm:flex-row flex-wrap gap-2 justify-center">
-        <a href={urlCelebration} target="_blank" rel="noopener noreferrer" className={btnClass}>
-          <GoogleGlyph />
-          {t.rsvp.calendarGoogleCelebration}
-        </a>
-        <button type="button" onClick={downloadIcs} className={btnClass}>
-          <AppleGlyph />
-          {t.rsvp.calendarDownloadIcs}
-        </button>
+    <div className="mt-8 pt-8 border-t border-cream-dark/50 text-left space-y-6">
+      <div>
+        <p className="text-sm font-medium text-warm mb-3 text-center">{t.rsvp.calendarTitleCeremony}</p>
+        <div className="flex flex-col sm:flex-row flex-wrap gap-2 justify-center">
+          <a href={urlCeremony} target="_blank" rel="noopener noreferrer" className={btnClass}>
+            <GoogleGlyph />
+            {t.rsvp.calendarGoogleCelebration}
+          </a>
+          <button type="button" onClick={downloadCeremonyIcs} className={btnClass}>
+            <AppleGlyph />
+            {t.rsvp.calendarDownloadIcs}
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <p className="text-sm font-medium text-warm mb-3 text-center">{t.rsvp.calendarTitle}</p>
+        <div className="flex flex-col sm:flex-row flex-wrap gap-2 justify-center">
+          <a href={urlCelebration} target="_blank" rel="noopener noreferrer" className={btnClass}>
+            <GoogleGlyph />
+            {t.rsvp.calendarGoogleCelebration}
+          </a>
+          <button type="button" onClick={downloadCelebrationIcs} className={btnClass}>
+            <AppleGlyph />
+            {t.rsvp.calendarDownloadIcs}
+          </button>
+        </div>
       </div>
     </div>
   );

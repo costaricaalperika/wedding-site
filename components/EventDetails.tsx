@@ -15,9 +15,31 @@ const ceremonyIcon = (
   </svg>
 );
 
+/** Tokuşan kadehler (kutlama simgesi) */
 const celebrationIcon = (
-  <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
+  <svg
+    className="w-7 h-7"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    {/* Sol kadeh */}
+    <g transform="translate(3 2) rotate(-18 4 8)">
+      <path d="M1 1 L7 1 L4 9 Z" />
+      <path d="M4 9 L4 15" />
+      <path d="M1.5 15 L6.5 15" />
+    </g>
+    {/* Sağ kadeh */}
+    <g transform="translate(13 2) rotate(18 4 8)">
+      <path d="M1 1 L7 1 L4 9 Z" />
+      <path d="M4 9 L4 15" />
+      <path d="M1.5 15 L6.5 15" />
+    </g>
+    {/* Tokuşma kıvılcımları */}
+    <path d="M12 4.5 L12.9 3 M12 4.5 L13.6 4.7 M12 4.5 L10.4 5.4" />
   </svg>
 );
 

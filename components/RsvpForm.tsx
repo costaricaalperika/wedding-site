@@ -142,9 +142,6 @@ export default function RsvpForm({ invitationOpened = false }: Props) {
     <section id="rsvp" className="scroll-mt-24 py-28 md:py-36 bg-paper-elevated">
       <div className="max-w-lg mx-auto px-6">
         <ScrollReveal>
-          <p className="text-sm tracking-[0.3em] text-rose mb-4 text-center">
-            {t.rsvp.eyebrow}
-          </p>
           <h2 className="font-[family-name:var(--font-serif)] text-4xl md:text-5xl text-center mb-4 text-warm">
             {t.rsvp.title}
           </h2>

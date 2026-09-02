@@ -24,7 +24,6 @@ type Dictionary = {
   /** Bölümler arası passage görselleri (erişilebilir alt metin) */
   passage: { imageAlt: string };
   rsvp: {
-    eyebrow: string;
     title: string;
     subtitle: string;
     successTitle: string;
@@ -49,6 +48,7 @@ type Dictionary = {
     sending: string;
     send: string;
     /** Başarılı katılım + davet açıldıysa takvim butonları */
+    calendarTitleCeremony: string;
     calendarTitle: string;
     calendarGoogleCelebration: string;
     calendarDownloadIcs: string;
@@ -149,20 +149,21 @@ const tr: Dictionary = {
     items: [
       {
         title: "Nikâh",
-        time: "13:45 - 15:00",
+        time: "14:30 - 15:30",
         description: "Fuar Evlendirme Dairesi, Kültür Parkı, Alsancak Mah, 35260 Konak/İzmir.",
       },
       {
         title: "Kutlama",
         time: "19:00",
-        description: "Viola Event, İzmir.",
+        description:
+          "Viola Event, İzmir. Şehit Er Zeki Toker Caddesi, Yıldızlar Mahallesi, No:1/A, Kaynaklar Merkez, 35000 Buca/İzmir.",
       },
     ],
     ceremonyDirectionsLabel: "Yol tarifi al (Google Haritalar)",
     celebrationDirectionsLabel: "Yol tarifi al (Google Haritalar)",
   },
   gallery: {
-    eyebrow: "Anılar",
+    eyebrow: "Anılarımız",
     title: "Galeri",
     photoAlt: "Düğün fotoğrafı",
   },
@@ -170,9 +171,9 @@ const tr: Dictionary = {
     imageAlt: "Duygu ve Alper düğün sitesi için süsleme görseli",
   },
   rsvp: {
-    eyebrow: "Bizimle Olun",
     title: "Katılım Formu",
-    subtitle: "Bu özel günde yanımızda olmanızı çok isteriz.",
+    subtitle:
+      "Bu özel günde yanımızda olmanızı çok isteriz. Lütfen katılım durumunuzu en geç 15 Eylül'e kadar bildiriniz.",
     successTitle: "Teşekkürler!",
     successText: "Cevabınız kaydedildi. Sizi görmek için sabırsızlanıyoruz!",
     submitAnother: "Yeni bir cevap gönder",
@@ -194,6 +195,7 @@ const tr: Dictionary = {
     error: "Bir hata oluştu. Lütfen tekrar deneyin.",
     sending: "Gönderiliyor...",
     send: "Katılım Gönder",
+    calendarTitleCeremony: "Nikâhı takviminize ekleyin",
     calendarTitle: "Kutlamayı takviminize ekleyin",
     calendarGoogleCelebration: "Google Takvim",
     calendarDownloadIcs: "Apple ve diğer takvimler (.ics)",
