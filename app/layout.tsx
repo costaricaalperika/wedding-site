@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Great_Vibes, Playfair_Display, Lato } from "next/font/google";
+import { Sacramento, Playfair_Display, Lato } from "next/font/google";
 import { Providers } from "./providers";
 import "./globals.css";
 
-/** Hero isimleri — el yazısı / romantik (Google Fonts) */
-const greatVibes = Great_Vibes({
+/**
+ * Hero isimleri — el yazısı / romantik (Google Fonts).
+ * Not: Great Vibes'ın büyük "A"sı küçük harf "a"ya benziyordu, bu yüzden
+ * büyük harfleri daha net okunan Sacramento'ya geçildi.
+ */
+const sacramento = Sacramento({
   weight: "400",
   subsets: ["latin", "latin-ext"],
   variable: "--font-hero",
@@ -37,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="tr" className="scroll-smooth">
       <body
-        className={`${playfair.variable} ${lato.variable} ${greatVibes.variable} antialiased`}
+        className={`${playfair.variable} ${lato.variable} ${sacramento.variable} antialiased`}
       >
         <Providers>{children}</Providers>
       </body>
