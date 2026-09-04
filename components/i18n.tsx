@@ -54,6 +54,17 @@ type Dictionary = {
     calendarDownloadIcs: string;
     calendarIcsFilename: string;
   };
+  /** Katılım bölümünden sonraki fotoğraf yükleme daveti + QR pop-up */
+  photos: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    buttonLabel: string;
+    modalTitle: string;
+    qrAlt: string;
+    linkButtonLabel: string;
+    closeAria: string;
+  };
   footer: { madeWithLove: string; datePlace: string };
   admin: {
     dashboardTitle: string;
@@ -199,6 +210,17 @@ const tr: Dictionary = {
     calendarGoogleCelebration: "Google Takvim",
     calendarDownloadIcs: "Apple ve diğer takvimler (.ics)",
     calendarIcsFilename: "alper-duygu-dugun.ics",
+  },
+  photos: {
+    eyebrow: "Anılarımıza Katkı",
+    title: "Fotoğraf Yükleme",
+    description:
+      "Düğünümüzde çektiğiniz fotoğrafları bizimle paylaşmak isterseniz, aşağıdaki butona tıklayarak QR kodu ve yükleme bağlantısına ulaşabilirsiniz.",
+    buttonLabel: "Fotoğraf Yükle",
+    modalTitle: "Fotoğraflarını Yükle",
+    qrAlt: "Fotoğraf yükleme bağlantısı için QR kod",
+    linkButtonLabel: "Fotoğraf Yükleme Linki",
+    closeAria: "Kapat",
   },
   footer: {
     madeWithLove: "Sevgiyle hazırlandı",

@@ -13,6 +13,7 @@ import MusicPlayer from "@/components/MusicPlayer";
 import InvitationCover from "@/components/InvitationCover";
 import PassageBreak from "@/components/PassageBreak";
 import HeartsRain from "@/components/HeartsRain";
+import PhotoUpload from "@/components/PhotoUpload";
 
 export default function Home() {
   const [invitationOpened, setInvitationOpened] = useState(false);
@@ -33,6 +34,7 @@ export default function Home() {
         <Gallery />
         <PassageBreak src="/passage3.png" tightTop />
         <RsvpForm invitationOpened={invitationOpened} />
+        <PhotoUpload />
         <Footer />
         <MusicPlayer shouldStart={invitationOpened} />
       </main>
