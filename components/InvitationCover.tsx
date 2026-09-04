@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import HeartsRain from "./HeartsRain";
 
 interface Props {
   onOpen: () => void;
@@ -63,8 +62,6 @@ export default function InvitationCover({ onOpen }: Props) {
           aria-label="Davetiyeyi aç"
           className="fixed inset-0 z-[200] cursor-pointer select-none bg-paper-cream flex items-center justify-center"
         >
-          <HeartsRain active />
-
           <div className="absolute inset-4 border border-rose/35 pointer-events-none" />
           <div className="absolute inset-[18px] border border-rose/15 pointer-events-none" />
 

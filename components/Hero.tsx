@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { useI18n } from "./i18n";
+import HeartsRain from "./HeartsRain";
 
 /** Aşağı düşen kalpler — `true` yapınca tekrar açılır (Hero arka plan animasyonu). */
 const ENABLE_FALLING_HEARTS = false;
@@ -104,9 +105,11 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-hero-mist to-cream"
+      className="relative isolate h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-hero-mist to-cream"
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#ffffff40_0%,_transparent_72%)]" />
+
+      <HeartsRain active />
 
       {ENABLE_FALLING_HEARTS ? <FallingHeartsLayer /> : null}
 
